@@ -1,1 +1,4 @@
-# Visualizando dos Egressos da PPG-CCMC - ICMC
+# Map visualization
+
+Map visualization of Former students from ICMC-USP Post-Graduate program
+
