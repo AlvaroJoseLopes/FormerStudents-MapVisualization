@@ -48,19 +48,17 @@ function getRandomInRange(from, to, fixed) {
 }
 
 function get_info(student_data) {
-  info = ''
+  info = "";
   for (const [key, value] of Object.entries(student_data)) {
-    info += `<strong>${key}</strong>: ${value}<br>`
+    info += `<strong>${key}</strong>: ${value}<br>`;
   }
-  return info
+  return info;
 }
 
 data.map((student_data) => {
-  // Generating random coordinates
-  if (Math.round(Math.random()) > 0.5)
-    city = [getRandomInRange(-5, 5, 3)+lat, getRandomInRange(-5, 5, 3)+lng]
-  else 
-    city = [getRandomInRange(-90, 90, 3), getRandomInRange(-90, 90, 3)]
+  city = [student_data.long, student_data.lat];
+  delete student_data.lat;
+  delete student_data.long;
   const marker = L.marker(city).bindPopup(get_info(student_data)).addTo(map);
 
   featureGroups.push(marker);
@@ -71,7 +69,6 @@ data.map((student_data) => {
 
   L.geoJSON(greatCircle).addTo(map);
 });
-
 
 // add array to featureGroup
 let group = new L.featureGroup(featureGroups);
