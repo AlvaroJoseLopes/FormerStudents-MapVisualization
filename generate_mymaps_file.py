@@ -3,7 +3,8 @@ import pandas as pd
 import re
 from collections import defaultdict
 
-FILENAME = "egressos_ccmc_ateh_2022_com_endereco.xlsx"
+FILENAME = "data/egressos_ccmc_ateh_2022_com_endereco.xlsx"
+OUT_FILE = "data/egressos.csv"
 columns = [
     "Nome",
     "Curso",
@@ -41,5 +42,5 @@ for _, row in data.iterrows():
 df = pd.DataFrame.from_dict(person_info, orient="index")
 
 df["Nome"] = df.index
-df.to_csv("egressos.csv", index=False)
-print("Successfully created file egressos.csv")
+df.to_csv(OUT_FILE, index=False)
+print(f"Successfully created file {OUT_FILE}")
