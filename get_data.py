@@ -24,7 +24,6 @@ columns = [
 
 def main(args):
     coords_df = parse_kml(args.kml_file)
-    print(coords_df.columns)
     info_df = pd.read_csv(args.csv_file, encoding="utf8")
     # Merging former student info with coordinates
     df_result = pd.merge(coords_df, info_df, how="inner", on="Nome")
@@ -32,7 +31,6 @@ def main(args):
     if args.save:
         df_result.to_csv(RESULT_FILE, index=False)
 
-    # data = pd.read_csv(args.input_file, encoding="utf8")
     df_result = df_result[columns]
     df_result.set_index("Nome")
     df_result = df_result.sample(frac=args.sample_fraction)

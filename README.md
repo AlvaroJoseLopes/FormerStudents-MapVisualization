@@ -13,7 +13,7 @@ Requirements:
 python3 generate_mymaps_file.py
 ```
 
-Import on Google MyMaps the `egressos.csv` file, then procceed to Google Earth and export `.kml` file.
+Import on Google MyMaps the `data/egressos.csv` file, then procceed to Google Earth and export `.kml` file.
 
 ```python
 python3 get_data.py
