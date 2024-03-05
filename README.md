@@ -19,4 +19,4 @@ Import on Google MyMaps the `data/egressos.csv` file, then procceed to Google Ea
 python3 get_data.py
 ```
 
-Open `index.html` on your browser.
+Open `visualization/index.html` on your browser.
