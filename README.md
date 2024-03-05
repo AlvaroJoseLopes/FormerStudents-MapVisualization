@@ -16,7 +16,6 @@ python3 generate_mymaps_file.py
 Import on Google MyMaps the `egressos.csv` file, then procceed to Google Earth and export `.kml` file.
 
 ```python
-python3 parse_kml.py
 python3 get_data.py
 ```
 
